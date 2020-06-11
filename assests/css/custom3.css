@@ -1,0 +1,18 @@
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+  }
+
+.button{
+  border:none; 
+  background:none; 
+  position: absolute;
+  right:-40px; 
+  top:7px; 
+  font-size:30px; 
+  transform:rotate(90deg); 
+  display:inline-block; 
+  cursor:pointer
+}
