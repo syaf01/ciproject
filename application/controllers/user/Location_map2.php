@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-Class Donate extends CI_Controller {
+Class Location_map2 extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		if(! $this->session->userdata('uid'))
@@ -11,6 +11,6 @@ Class Donate extends CI_Controller {
 		$userid = $this->session->userdata('uid');
 		$this->load->model('User_Profile_Model');
 		$profiledetails=$this->User_Profile_Model->getprofile($userid);
-		$this->load->view('user/donate',['profile'=>$profiledetails]);
+		$this->load->view('user/location_map2',['profile'=>$profiledetails]);
 	}
 }

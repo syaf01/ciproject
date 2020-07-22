@@ -1,81 +1,107 @@
-/**
- * Create google maps Map instance.
- * @param {number} lat
- * @param {number} lng
- * @return {Object}
- */
-const createMap = ({ lat, lng }) => {
-    return new google.maps.Map(document.getElementById('map'), {
-      center: { lat, lng },
-      zoom: 15
-    });
-  };
-  
-  /**
-   * Create google maps Marker instance.
-   * @param {Object} map
-   * @param {Object} position
-   * @return {Object}
-   */
-  const createMarker = ({ map, position }) => {
-    return new google.maps.Marker({ map, position });
-  };
-  
-  /**
-   * Track the user location.
-   * @param {Object} onSuccess
-   * @param {Object} [onError]
-   * @return {number}
-   */
-  const trackLocation = ({ onSuccess, onError = () => { } }) => {
-    if ('geolocation' in navigator === false) {
-      return onError(new Error('Geolocation is not supported by your browser.'));
-    }
-  
-    return navigator.geolocation.watchPosition(onSuccess, onError, {
-      enableHighAccuracy: true,
-      timeout: 5000,
-      maximumAge: 0
-    });
-  };
-  
-  /**
-   * Get position error message from the given error code.
-   * @param {number} code
-   * @return {String}
-   */
-  const getPositionErrorMessage = code => {
-    switch (code) {
-      case 1:
-        return 'Permission denied.';
-      case 2:
-        return 'Position unavailable.';
-      case 3:
-        return 'Timeout reached.';
+(() => {
+  if (!window.navigator || !window.navigator.geolocation) {
+    alert('Your browser doesn\'t support geolocation!');
+    return;
+  }
+
+  function geolocate() {
+    navigator.geolocation.getCurrentPosition(onGeolocateSuccess, onGeolocateError);
+  }
+
+  function onGeolocateSuccess(coordinates) {
+    const { latitude, longitude } = coordinates.coords;
+    showMap(latitude, longitude);
+  }
+
+  function onGeolocateError(error) {
+    console.log(error.code, error.message);
+
+    if (error.code === 1) {
+      console.log('User declined geolocation');
+    } else if (error.code === 2) {
+      console.log('Geolocation position unavailable');
+    } else if (error.code === 3) {
+      console.log('Timeout determining geolocation');
     }
   }
-  
-  /**
-   * Initialize the application.
-   * Automatically called by the google maps API once it's loaded.
-  */
-  function init() {
-    const initialPosition = { lat: 59.32, lng: 17.84 };
-    const map = createMap(initialPosition);
-    const marker = createMarker({ map, position: initialPosition });
-    const $info = document.getElementById('info');
-  
-    let watchId = trackLocation({
-      onSuccess: ({ coords: { latitude: lat, longitude: lng } }) => {
-        marker.setPosition({ lat, lng });
-        map.panTo({ lat, lng });
-        $info.textContent = `Lat: ${lat.toFixed(5)} Lng: ${lng.toFixed(5)}`;
-        $info.classList.remove('error');
-      },
-      onError: err => {
-        console.log($info);
-        $info.textContent = `Error: ${err.message || getPositionErrorMessage(err.code)}`;
-        $info.classList.add('error');
-      }
+
+  function watchLocation() {
+    const watchId = navigator.geolocation.watchPosition(onLocationChange, onGeolocateError);
+    window.localStorage.setItem('lastWatch', watchId);
+    console.log('Set watchId', watchId);
+  }
+
+  function onLocationChange(coordinates) {
+    const { latitude, longitude } = coordinates.coords;
+    console.log('Changed coordinates: ', latitude, longitude);
+  }
+
+  function clearWatch() {
+    const watchId = window.localStorage.getItem('lastWatch');
+    navigator.geolocation.clearWatch(watchId);
+    console.log('Cleared watchId: ', watchId);
+  }
+
+  function showMap(lat, lng) {
+    const $map = document.getElementById('map');
+    const position = { lat, lng };
+    window.map = new google.maps.Map($map, {
+      center: position,
+      zoom: 6
+    });
+    window.markers = window.markers || [];
+    const marker = new google.maps.Marker({ map, position });
+  }
+
+  function hideMap() {
+    const $map = document.getElementById('map');
+    $map.innerHTML = '';
+  }
+
+  const mockMuseumResponse = [
+    {
+      id: 1,
+      name: "Hospital Melaka",
+      lat: 2.2189908,
+      lng: 102.2593487
+    }
+  ];
+
+  function showNearbyMuseums() {
+    if (!window.map || !window.markers) { return; }
+
+    mockMuseumResponse.forEach((museum) => {
+      const { lat, lng, name } = museum;
+      const position = { lat, lng };
+      const title = name;
+      const marker = new google.maps.Marker({ map, position, title });
+      window.markers.push(marker);
     });
   }
+
+  window.enableButtons = () => {
+    const $geolocateButton = document.getElementById('geolocation-button');
+    const $watchButton =  document.getElementById('watch-button');
+    const $clearWatchButton = document.getElementById('clear-watch-button');
+    const $showNearbyButton = document.getElementById('show-nearby-button');
+
+    $geolocateButton.disabled = false;
+    $watchButton.disabled = false;
+    $clearWatchButton.disabled = false;
+    $showNearbyButton.disabled = false;
+
+    console.log('Google Maps API loaded');
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const $geolocateButton = document.getElementById('geolocation-button');
+    const $watchButton =  document.getElementById('watch-button');
+    const $clearWatchButton = document.getElementById('clear-watch-button');
+    const $showNearbyButton = document.getElementById('show-nearby-button');
+
+    $geolocateButton.addEventListener('click', geolocate);
+    $watchButton.addEventListener('click', watchLocation);
+    $clearWatchButton.addEventListener('click', clearWatch);
+    $showNearbyButton.addEventListener('click', showNearbyMuseums);
+  });
+})();

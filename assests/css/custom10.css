@@ -1,0 +1,9 @@
+h1 {
+    font-size: 48px;
+  }
+  
+  #map {
+    min-height: 750px;
+    padding-top: 10px;
+  }
+  

@@ -69,10 +69,10 @@
 		<th>BloodType</th>
 		<th>Action</th>
             </tr><?php
-            foreach ($bloodreq_data as $bloodreq)
+            foreach ($bloodreq_data as $bloodreq) 
             {
                 ?>
-                <tr> 
+                <tr>  
 			<td width="80px"><?php echo ++$start ?></td>
 			<td><?php echo $bloodreq->branch ?></td>
 			<td><?php echo $bloodreq->date ?></td>
@@ -84,11 +84,11 @@
 				echo ' | '; 
 				echo anchor(site_url('staff/Bloodreq/update/'.$bloodreq->id),'Update'); 
 				echo ' | '; 
-				echo anchor(site_url('staff/Bloodreq/delete/'.$bloodreq->id),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+				echo anchor(site_url('staff/Bloodreq/delete/'.$bloodreq->id),'Delete','onclick="javascript: return confirm(\'Are You Sure ?\')"'); 
 				?>
 			</td>
 		</tr>
-                <?php 
+                <?php  
             }
             ?>
         </table>

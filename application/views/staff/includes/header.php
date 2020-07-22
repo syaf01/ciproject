@@ -28,8 +28,8 @@
           Home
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="<?php echo site_url('staff/bloodreq'); ?>">Blood Request</a>
-          <a class="dropdown-item" href="<?php echo site_url('staff/Donate'); ?>">Donation History</a>
+          <a class="dropdown-item" href="<?php echo site_url('staff/Bloodreq'); ?>">Blood Request</a>
+          <a class="dropdown-item" href="<?php echo site_url('staff/History'); ?>">Donation History</a>
           <a class="dropdown-item" href="<?php echo site_url('staff/Campaign'); ?>">Blood Campaign</a>
         </div>
       </li>

@@ -42,7 +42,7 @@
             foreach ($bloodreq_data as $bloodreq)
             { 
                 ?>
-                <tr>
+                <tr> 
 			<td><?php echo $bloodreq->branch ?></td>
 			<td><?php echo $bloodreq->date ?></td>
 			<td><?php echo $bloodreq->time ?></td>
@@ -58,7 +58,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div> 
-      <br>
+      <br> 
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
         Branch : <?php echo $bloodreq->branch ?> <br>

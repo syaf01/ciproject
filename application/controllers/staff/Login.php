@@ -26,11 +26,11 @@ public function index(){
     }	
 }
 
-//function for logout
+//function for logout 
 public function logout(){
 $this->session->unset_userdata('stid');
 $this->session->sess_destroy();
-return redirect('staff/login');
+return redirect('staff/login'); 
 }
 
 }

@@ -29,7 +29,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="<?php echo site_url('user/BloodReq'); ?>">Blood Request</a>
-          <a class="dropdown-item" href="<?php echo site_url('user/Donate'); ?>">Donation History</a>
+          <a class="dropdown-item" href="<?php echo site_url('user/History'); ?>">Donation History</a>
           <a class="dropdown-item" href="<?php echo site_url('user/Campaign'); ?>">Blood Campaign</a>
         </div>
       </li>
@@ -44,13 +44,13 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Contact Us</a>
+        <a class="nav-link" href="<?php echo site_url('user/Location'); ?>">Contact Us</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">About Us</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
+    <form class="form-inline my-2 my-lg-0"> 
     </form>
   </div>
 </nav>
