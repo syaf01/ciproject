@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>User dashboard</title>
+    <title>Staff dashboard</title>
 
 <!-- Bootstrap core CSS-->
 <?php echo link_tag('assests/vendor/bootstrap/css/bootstrap.min.css'); ?>
@@ -25,7 +25,7 @@
 
   <body id="page-top">
 
- <?php include APPPATH.'views/user/includes/header.php';?>
+ <?php include APPPATH.'views/staff/includes/header.php';?>
 
     <div id="wrapper">
 
@@ -38,7 +38,7 @@
           <!-- Icon Cards-->
           <div class="row">
             <div class="col-xl-12 col-sm-6 mb-3">
-   <h4>Welcome <?php echo $profile->firstName;?> <?php echo $profile->lastName;?> ! </h4>
+   <h4>Welcome! </h4>
             </div>
  
   
@@ -50,7 +50,7 @@
         <!-- /.container-fluid -->
 
         <!-- Sticky Footer -->
-   <?php include APPPATH.'views/user/includes/footer.php';?>
+   <?php include APPPATH.'views/staff/includes/footer.php';?>
 
       </div>
       <!-- /.content-wrapper -->

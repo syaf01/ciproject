@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head> 
 <title>Blood Campaign</title>
 <!-- Bootstrap core CSS-->
 <?php echo link_tag('assests/vendor/bootstrap/css/bootstrap.min.css'); ?>
@@ -18,26 +18,18 @@
 
    <?php include APPPATH.'views/user/includes/header.php';?>
 
-    <div id="wrapper">
-
-      <!-- Sidebar -->
-  <?php include APPPATH.'views/user/includes/sidebar.php';?>
+    <div id="wrapper"> 
 
       <div id="content-wrapper">
 
         <div class="container-fluid">
 
-          <!-- Breadcrumbs-->
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-              <a href="<?php echo site_url('user/Dashboard'); ?>">User</a>
-            </li>
-            <li class="breadcrumb-item active">Blood Campaign</li>
-          </ol>
-          </div>
+        
         <!-- /.container-fluid -->
 
-  <div class="container">
+  <div class="container"> 
+  <h2 style="margin-top:0px">List of Blood Campaign</h2>
+        <br>
   <div class="row">
     <div class="col-12">
       <table class="table table-bordered">
@@ -55,9 +47,52 @@
             <td>10:00AM - 03:00PM</td>
             <td>TESCO Cheng</td>
             <td>
-              <button type="button" class="btn btn-primary"><a href="<?php echo site_url('user/JoinCampaign'); ?>">JOIN</a></button>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalContactForm">JOIN</button>
+              <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center"> 
+        <h4 class="modal-title w-100 font-weight-bold">Join us</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <label data-error="wrong" data-success="right" for="fname">First name</label>
+          <?php echo form_input(['name'=>'firstname','id'=>'firstname','class'=>'form-control','autofocus'=>'autofocus','value'=>set_value('firstname',$profile->firstName)]);?>
+        </div>
+
+        <div class="md-form mb-5">
+          <label data-error="wrong" data-success="right" for="lname">Last Name</label>
+          <?php echo form_input(['name'=>'lastname','id'=>'lastname','class'=>'form-control','autofocus'=>'autofocus','value'=>set_value('lastname',$profile->lastName)]);?>
+        </div>
+
+        <div class="md-form mb-5">
+          <label data-error="wrong" data-success="right" for="btype">Blood Type</label>
+          <?php echo form_error('bloodType',"<div style='color:red'>","</div>");?>
+          <select class="browser-default custom-select">
+            <option selected>-</option>
+            <option value="1">O</option>
+            <option value="2">AB</option>
+            <option value="3">B</option>
+            <option value="3">A</option>
+          </select>
+        </div>
+
+        <div class="md-form">
+          <label data-error="wrong" data-success="right" for="pnum">Phone Number</label>
+          <?php echo form_input(['name'=>'mobileNumber','id'=>'mobileNumber','class'=>'form-control','autofocus'=>'autofocus','value'=>set_value('mobileNumber',$profile->mobileNumber)]);?>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <?php echo form_submit(['name'=>'Submit','value'=>'Submit','class'=>'btn btn-primary btn-block']); ?>
+      </div>
+    </div>
+  </div>
+</div>
               <button type="button" class="btn btn-success">LOCATE</button>
-              <button type="button" class="btn btn-danger">DETAILS</button>
             </td>
           </tr>
           <tr>
@@ -65,9 +100,51 @@
             <td>10:00AM - 03:00PM</td>
             <td>Mahkota Medical Centre</td>
             <td>
-              <button type="button" class="btn btn-primary"><a href="<?php echo site_url('user/JoinCampaign'); ?>">JOIN</a></button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalContactForm">JOIN</button>
+              <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Join us</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <label data-error="wrong" data-success="right" for="fname">First name</label>
+          <input type="text" id="fname" class="form-control validate">
+        </div>
+
+        <div class="md-form mb-5">
+          <label data-error="wrong" data-success="right" for="lname">Last Name</label>
+          <input type="text" id="lname" class="form-control validate">
+        </div>
+
+        <div class="md-form mb-5">
+          <label data-error="wrong" data-success="right" for="btype">Blood Type</label>
+          <select class="browser-default custom-select">
+            <option selected>-</option>
+            <option value="1">O</option>
+            <option value="2">AB</option>
+            <option value="3">B</option>
+            <option value="3">A</option>
+          </select>
+        </div>
+
+        <div class="md-form">
+          <label data-error="wrong" data-success="right" for="pnum">Phone Number</label>
+          <input type="text" id="pnum" class="form-control validate" rows="4"></input>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button type="button" class="btn btn-danger">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
               <button type="button" class="btn btn-success">LOCATE</button>
-              <button type="button" class="btn btn-danger">DETAILS</button>
             </td>
           </tr>
           <tr>
@@ -75,9 +152,51 @@
             <td>11:00AM - 04:00PM</td>
             <td>KIPMALL Bachang</td>
             <td>
-              <button type="button" class="btn btn-primary"><a href="<?php echo site_url('user/JoinCampaign'); ?>">JOIN</a></button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalContactForm">JOIN</button>
+              <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Join us</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <label data-error="wrong" data-success="right" for="fname">First name</label>
+          <input type="text" id="fname" class="form-control validate">
+        </div>
+
+        <div class="md-form mb-5">
+          <label data-error="wrong" data-success="right" for="lname">Last Name</label>
+          <input type="text" id="lname" class="form-control validate">
+        </div>
+
+        <div class="md-form mb-5">
+          <label data-error="wrong" data-success="right" for="btype">Blood Type</label>
+          <select class="browser-default custom-select">
+            <option selected>-</option>
+            <option value="1">O</option>
+            <option value="2">AB</option>
+            <option value="3">B</option>
+            <option value="3">A</option>
+          </select>
+        </div>
+
+        <div class="md-form">
+          <label data-error="wrong" data-success="right" for="pnum">Phone Number</label>
+          <input type="text" id="pnum" class="form-control validate" rows="4"></input>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button type="button" class="btn btn-danger">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
               <button type="button" class="btn btn-success">LOCATE</button>
-              <button type="button" class="btn btn-danger">DETAILS</button>
             </td>
           </tr>
         </tbody>

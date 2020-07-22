@@ -20,20 +20,9 @@
 
     <div id="wrapper">
 
-      <!-- Sidebar -->
-  <?php include APPPATH.'views/user/includes/sidebar.php';?>
-
       <div id="content-wrapper">
 
         <div class="container-fluid">
-
-          <!-- Breadcrumbs-->
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-              <a href="<?php echo site_url('user/Dashboard'); ?>">User</a>
-            </li>
-            <li class="breadcrumb-item active">Change Password</li>
-          </ol>
 
           <!-- Page Content -->
           <h1>Change Password</h1>

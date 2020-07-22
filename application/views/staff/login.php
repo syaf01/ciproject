@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>User Login</title>
+    <title>Staff Login</title>
 
 <?php echo link_tag('assests/vendor/bootstrap/css/bootstrap.min.css'); ?>
 <?php echo link_tag('assests/vendor/fontawesome-free/css/all.min.css'); ?>
@@ -15,6 +15,7 @@
     <br>
     <br>
     <br>
+
     <div class="container">
       <div class="card card-login mx-auto mt-5">
         <!---- Error Message ---->
@@ -24,31 +25,29 @@
 
 <?php } ?>  
         <div class="card-body">
-<?php echo form_open('user/login');?>
+<?php echo form_open('staff/login');?>
             <div class="form-group">
               <div class="form-label-group">
-<?php echo form_input(['name'=>'emailid','id'=>'emailid','class'=>'form-control','autofocus'=>'autofocus','value'=>set_value('emailid')]);?>
-<?php echo form_label('Enter valid email id', 'emailid'); ?>
-<?php echo form_error('emailid',"<div style='color:red'>","</div>");?>
+<?php echo form_input(['name'=>'username','id'=>'username','class'=>'form-control','autofocus'=>'autofocus','value'=>set_value('username')]);?>
+<?php echo form_label('Enter Username', 'username'); ?>
+<?php echo form_error('username',"<div style='color:red'>","</div>");?>
               </div>
-            </div>
+            </div> 
             <div class="form-group">
               <div class="form-label-group">
 <?php echo form_password(['name'=>'password','id'=>'password','class'=>'form-control','autofocus'=>'autofocus','value'=>set_value('password')]);?>
 <?php echo form_label('Password', 'password'); ?>
 <?php echo form_error('password',"<div style='color:red'>","</div>");?>
               </div>
-            </div>
+</div>
+<a class="d-block small" href="<?php echo site_url('Home'); ?>">Back to Home page</a>
    
- <?php echo form_submit(['name'=>'login','value'=>'LOGIN','class'=>'btn btn-danger btn-block']); ?>
-<?php echo form_close(); ?>
-            
-<a class="d-block small mt-3" href="<?php echo site_url('user/Signup'); ?>">Register an Account</a>
- <a class="d-block small" href="<?php echo site_url('Home'); ?>">Back to Home page</a>
+ <?php echo form_submit(['name'=>'login','value'=>'Login','class'=>'btn btn-danger btn-block']); ?>
+ <?php echo form_close(); ?>
+  
 
-          </div>
-        </div>
-      </div>
+     
+        </div> 
     </div>
 
     <!-- Bootstrap core JavaScript-->

@@ -19,25 +19,14 @@
    <?php include APPPATH.'views/user/includes/header.php';?>
 
     <div id="wrapper">
-
-      <!-- Sidebar -->
-  <?php include APPPATH.'views/user/includes/sidebar.php';?>
   <div id="content-wrapper">
 
         <div class="container-fluid">
 
-          <!-- Breadcrumbs-->
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-              <a href="<?php echo site_url('user/Dashboard'); ?>">User</a>
-            </li>
-            <li class="breadcrumb-item active">Donation History</li>
-          </ol>
-          </div>
-        <!-- /.container-fluid -->
-
         <!--Table-->
     <div class="container">
+    <h2 style="margin-top:0px">List of Donation History</h2>
+        <br>
 <table class="table table-striped table-hover">
 
 <!--Table head-->

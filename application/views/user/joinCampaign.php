@@ -1,56 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalContactForm">JOIN</button>
+              <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Join us</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <label data-error="wrong" data-success="right" for="fname">First name</label>
+          <input type="text" id="fname" class="form-control validate">
+        </div>
 
-<head>
-<?php echo link_tag('assests/css/sb-admin.css'); ?>
-<?php echo link_tag('assests/css/custom4.css'); ?>
-</head>
+        <div class="md-form mb-5">
+          <label data-error="wrong" data-success="right" for="lname">Last Name</label>
+          <input type="text" id="lname" class="form-control validate">
+        </div>
 
-  <body>
-  <div class="container">
-  <form action="action_page.php">
-    <div class="row">
-      <div class="col-25">
-        <label for="fname">First Name</label>
+        <div class="md-form mb-5">
+          <label data-error="wrong" data-success="right" for="btype">Blood Type</label>
+          <select class="browser-default custom-select">
+            <option selected>-</option>
+            <option value="1">O</option>
+            <option value="2">AB</option>
+            <option value="3">B</option>
+            <option value="3">A</option>
+          </select>
+        </div>
+
+        <div class="md-form">
+          <label data-error="wrong" data-success="right" for="pnum">Phone Number</label>
+          <input type="text" id="pnum" class="form-control validate" rows="4"></input>
+        </div>
+
       </div>
-      <div class="col-75">
-        <input type="text" id="fname" name="firstname" placeholder="First Name">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="lname">Last Name</label>
-      </div>
-      <div class="col-75">
-        <input type="text" id="lname" name="lastname" placeholder="Last Name">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="country">Blood Type</label>
-      </div>
-      <div class="col-75">
-        <select id="country" name="country">
-          <option value="australia">O</option>
-          <option value="canada">AB</option>
-          <option value="usa">B</option>
-          <option value="usa">A</option>
-        </select>
+      <div class="modal-footer d-flex justify-content-center">
+        <?php echo form_submit(['name'=>'Submit','value'=>'Submit','class'=>'btn btn-danger btn-block']); ?>
       </div>
     </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="lname">Phone Number</label>
-      </div>
-      <div class="col-75">
-        <input type="text" id="lname" name="lastname" placeholder="Phone Number">
-      </div>
-    </div>
-    <div class="row">
-      <input type="submit" value="Submit">
-    </div>
-  </form>
+  </div>
 </div>
-
-</body>
-</html>

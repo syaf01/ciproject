@@ -6,5 +6,5 @@ public function index()
 {
 $this->load->view('home');
 }
-
+ 
 }	

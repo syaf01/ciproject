@@ -264,7 +264,7 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
   display: none;
   background-color: #262626;
   padding-left: 8px;
-}
+} 
 
 .sidebar .nav-item.dropdown .dropdown-toggle::after {
   display: none;

@@ -13,7 +13,7 @@ $data=array(
 			'address'=>$address,
 			'emailId'=>$emailid,
 			'mobileNumber'=>$mnumber,
-			'userPassword'=>$password,
+			'userPassword'=>$password, 
 			'isActive'=>$status
 		);
 $sql_query=$this->db->insert('tblusers',$data);
@@ -22,7 +22,7 @@ $this->session->set_flashdata('success', 'Registration successfull');
 		redirect('user/signup');
 	}
 	else{
-		$this->session->set_flashdata('error', 'Somthing went worng. Error!!');
+		$this->session->set_flashdata('error', 'Something went worng. Error!!');
 		redirect('user/signup');
 	}
 

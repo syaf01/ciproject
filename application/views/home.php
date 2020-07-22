@@ -21,7 +21,7 @@
         <div class="container-fluid">
 
           <!-- Page Content -->
-          <center><img src="<?php echo base_url('assests/img/logo.png');?>" alt="" class="center"></center>
+          <center><img src="<?php echo base_url('assests/img/logo2.png');?>" alt="" class="center"></center>
           
 <div class="row">
 <div class="col-xl-3 col-sm-6 mb-3">
@@ -63,12 +63,28 @@
                 </a>
               </div>
             </div>
-
-
-
 </div>
-
-
+<div class="row">
+<div class="col-xl-3 col-sm-6 mb-3">
+  &nbsp;
+</div>
+          <div class="col-xl-3 col-sm-6 mb-3">
+              <div class="card text-white bg-danger o-hidden h-100">
+                <div class="card-body">
+                  <div class="card-body-icon">
+                    <i class="fa fa-laptop"></i> 
+                  </div>
+                  <div class="mr-5">STAFF</div>
+                </div>
+               <a class="card-footer text-white clearfix small z-1" href="<?php echo site_url('staff/login'); ?>">
+                  <span class="float-left">Click Here</span>
+                  <span class="float-right">
+                    <i class="fas fa-angle-right"></i>
+                  </span>
+                </a>
+              </div>
+            </div> 
+</div>
 
         </div>
 

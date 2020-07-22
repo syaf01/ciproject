@@ -25,7 +25,7 @@
 
 <!---- Error Message ---->
 
-<?php if ($this->session->flashdata('error')) { ?>
+<?php if ($this->session->flashdata('error')) { ?> 
 <p style="color:red; font-size:18px;"><?php echo $this->session->flashdata('error');?></p>
 
 <?php } ?>  
@@ -150,7 +150,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> 
  <?php echo form_submit(['name'=>'Register','value'=>'REGISTER','class'=>'btn btn-danger btn-block']); ?>
 
           </form>

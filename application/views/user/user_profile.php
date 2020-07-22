@@ -19,21 +19,8 @@
    <?php include APPPATH.'views/user/includes/header.php';?>
 
     <div id="wrapper">
-
-      <!-- Sidebar -->
-  <?php include APPPATH.'views/user/includes/sidebar.php';?>
-
       <div id="content-wrapper">
-
         <div class="container-fluid">
-
-          <!-- Breadcrumbs-->
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-              <a href="<?php echo site_url('user/Dashboard'); ?>">User</a>
-            </li>
-            <li class="breadcrumb-item active">My Profile</li>
-          </ol>
 
           <!-- Page Content -->
           <h1>My Profile</h1>
@@ -61,9 +48,9 @@
                 <div class="col-md-6">
                   <div class="form-label-group">
 
-<?php echo form_input(['name'=>'firstname','id'=>'firstname','class'=>'form-control','autofocus'=>'autofocus','value'=>set_value('firstname',$profile->firstName)]);?>
-<?php echo form_label('Enter your first name', 'firstname'); ?>
-<?php echo form_error('firstname',"<div style='color:red'>","</div>");?>
+<?php echo form_input(['name'=>'firstName','id'=>'firstName','class'=>'form-control','autofocus'=>'autofocus','value'=>set_value('firstName',$profile->firstName)]);?>
+<?php echo form_label('Enter your first name', 'firstName'); ?>
+<?php echo form_error('firstName',"<div style='color:red'>","</div>");?>
 
                   </div>
                 </div>
@@ -76,9 +63,9 @@
                 <div class="col-md-6">
                   <div class="form-label-group">
 
-<?php echo form_input(['name'=>'lastname','id'=>'lastname','class'=>'form-control','autofocus'=>'autofocus','value'=>set_value('lastname',$profile->lastName)]);?>
-<?php echo form_label('Enter your  last name', 'lastname'); ?>
-<?php echo form_error('lastname',"<div style='color:red'>","</div>");?>
+<?php echo form_input(['name'=>'lastName','id'=>'lastName','class'=>'form-control','autofocus'=>'autofocus','value'=>set_value('lastName',$profile->lastName)]);?>
+<?php echo form_label('Enter your  last name', 'lastName'); ?>
+<?php echo form_error('lastName',"<div style='color:red'>","</div>");?>
 
                   </div>
                 </div>
@@ -160,9 +147,9 @@
                     <div class="col-md-6">
               <div class="form-label-group">
 
-<?php echo form_input(['name'=>'emailid','id'=>'emailid','class'=>'form-control','autofocus'=>'autofocus','readonly'=>'true','value'=>set_value('emailid',$profile->emailId)]);?>
-<?php echo form_label('Enter valid email id', 'emailid'); ?>
-<?php echo form_error('emailid',"<div style='color:red'>","</div>");?>
+<?php echo form_input(['name'=>'emailId','id'=>'emailId','class'=>'form-control','autofocus'=>'autofocus','readonly'=>'true','value'=>set_value('emailId',$profile->emailId)]);?>
+<?php echo form_label('Enter valid email id', 'emailId'); ?>
+<?php echo form_error('emailId',"<div style='color:red'>","</div>");?>
 
               </div>
             </div>
@@ -173,9 +160,9 @@
             <div class="col-md-6">
               <div class="form-label-group">
 
-<?php echo form_input(['name'=>'mobilenumber','id'=>'mobilenumber','class'=>'form-control','autofocus'=>'autofocus','value'=>set_value('mobilenumber',$profile->mobileNumber)]);?>
-<?php echo form_label('Enter Mobile Number', 'mobilenumber'); ?>
-<?php echo form_error('mobilenumber',"<div style='color:red'>","</div>");?>
+<?php echo form_input(['name'=>'mobileNumber','id'=>'mobileNumber','class'=>'form-control','autofocus'=>'autofocus','value'=>set_value('mobileNumber',$profile->mobileNumber)]);?>
+<?php echo form_label('Enter Mobile Number', 'mobileNumber'); ?>
+<?php echo form_error('mobileNumber',"<div style='color:red'>","</div>");?>
 
               </div>
             </div>
@@ -184,7 +171,7 @@
 
        <div class="form-row">
             <div class="col-md-6">  
- <?php echo form_submit(['name'=>'Update','value'=>'Update','class'=>'btn btn-primary btn-block']); ?>
+            <?php echo form_submit(['name'=>'Update','value'=>'Update','class'=>'btn btn-primary btn-block']); ?>
 </div>
 </div>
 

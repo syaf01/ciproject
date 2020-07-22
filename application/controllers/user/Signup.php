@@ -17,13 +17,13 @@ Class Signup extends CI_Controller {
         $this->form_validation->set_rules('confirmpassword','Confirm Password','required|min_length[6]|matches[password]');
 
         if($this->form_validation->run()){
-
+ 
             $fname=$this->input->post('firstname');
             $lname=$this->input->post('lastname');
             $age=$this->input->post('age');
             $icNo=$this->input->post('icNo');
             $gender=$this->input->post('gender');
-            $bloodType=$this->input->post('bloodType');
+            $bloodType=$this->input->post('bloodType'); 
             $address=$this->input->post('address');
             $emailid=$this->input->post('emailid');
             $mnumber=$this->input->post('mobilenumber');

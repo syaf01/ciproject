@@ -10,23 +10,21 @@ public function getprofile($userid){
   return $query->row();  
 }
 
-public function update_profile($fname,$lname,$age,$icNo,$gender,$bloodType,$address,$mnumber,$userid){
+public function update_profile($fname,$lname,$age,$icNo,$gender,$bloodType,$address,$emailId,$mobileNumber,$userid){
 $data = array(
-              'firstName' =>$fname,
-              'lastName' => $lname,
-              'age' => $age,
+               'firstName' =>$fname,
+               'lastName' => $lname,
+               'age' => $age,
               'icNo'=> $icNo,
 			        'gender'=> $gender,
 			        'bloodType'=> $bloodType,
-			        'address'=> $address,
-              'mobileNumber' => $mnumber
+              'address'=> $address,
+              'emailId'=> $emailId,
+               'mobileNumber' => $mobileNumber,
+               'id' => $userid
             );
 
 $sql_query=$this->db->where('id', $userid)
                 ->update('tblusers', $data); 
-
-
-}
-
-
-}
+          }
+        }

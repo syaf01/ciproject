@@ -10,7 +10,7 @@ public function validatelogin($emailid,$password,$status){
 	if($account!=NULL){
  		$dbstatus=$account->isActive;
 
-
+ 
 		//verifying status
 		if( $dbstatus==$status){
 			return $account->id;
@@ -21,7 +21,7 @@ public function validatelogin($emailid,$password,$status){
 			redirect('user/login');
 		}
 	}
-	return NULL;
+	return NULL; 
 }
 }
 
