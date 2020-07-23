@@ -171,7 +171,7 @@
 
        <div class="form-row">
             <div class="col-md-6">  
-            <?php echo form_submit(['name'=>'Update','value'=>'Update','class'=>'btn btn-primary btn-block']); ?>
+            <?php echo form_submit(['name'=>'Update','value'=>'Update','class'=>'btn btn-danger btn-block']); ?>
 </div>
 </div>
 

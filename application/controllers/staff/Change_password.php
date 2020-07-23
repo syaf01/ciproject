@@ -3,8 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 Class Change_password extends CI_Controller {
 function __construct(){
 parent::__construct();
-if(! $this->session->userdata('uid'))
-redirect('user/login');
+if(! $this->session->userdata('stid'))
+redirect('staff/login');
 }
 
 public function index(){
@@ -14,24 +14,24 @@ $this->form_validation->set_rules('confirmpassword','Confirm Password','required
 if($this->form_validation->run()){
 $cpassword=$this->input->post('currentpassword');
 $newpassword=$this->input->post('password');
-$userid = $this->session->userdata('uid');
-$this->load->model('User_Changepassword_Model');
-$cpass=$this->User_Changepassword_Model->getcurrentpassword($userid);
-echo $dbpass=$cpass->userPassword;
+$staffid = $this->session->userdata('stid');
+$this->load->model('Staff_Changepassword_Model');
+$cpass=$this->Staff_Changepassword_Model->getcurrentpassword($staffid);
+echo $dbpass=$cpass->password;
 
  if($dbpass==$cpassword){
-if($this->User_Changepassword_Model->updatepassword($userid,$newpassword))
+if($this->Staff_Changepassword_Model->updatepassword($staffid,$newpassword))
 {
 $this->session->set_flashdata('success', 'Password change successfully');
-	redirect('user/change_password');
+	redirect('staff/change_password');
 }
 
 } else {
 $this->session->set_flashdata('error', 'Current password is wrong. Error!!');
-redirect('user/change_password');	
+redirect('staff/change_password');	
 } 
 } else {
-$this->load->view('user/change_password');
+$this->load->view('staff/change_password');
 }
 }
 

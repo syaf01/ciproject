@@ -48,7 +48,7 @@
 			<td><?php echo $bloodreq->time ?></td>
 			<td><?php echo $bloodreq->bloodType ?></td>
       <td style="text-align:center" width="200px">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalContactForm">Detail</button>
+      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalContactForm">Detail</button>
     <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -70,7 +70,6 @@
     </div>
   </div>
 </div>
-<a class="btn btn-success" href="<?php echo site_url('user/Location'); ?>">Location</a>
 			</td>
 		</tr>
                 <?php 

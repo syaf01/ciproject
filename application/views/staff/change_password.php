@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<title>User Change Password</title>
+<title>Staff Change Password</title>
 <!-- Bootstrap core CSS-->
 <?php echo link_tag('assests/vendor/bootstrap/css/bootstrap.min.css'); ?>
 <!-- Custom fonts for this template-->
@@ -16,7 +16,7 @@
 
   <body id="page-top">
 
-   <?php include APPPATH.'views/user/includes/header.php';?>
+   <?php include APPPATH.'views/staff/includes/header.php';?>
 
     <div id="wrapper">
 
@@ -27,6 +27,7 @@
           <!-- Page Content -->
           <h1>Change Password</h1>
           <hr>
+          
 <!---- Success Message ---->
 <?php if ($this->session->flashdata('success')) { ?>
 <p style="color:green; font-size:18px;"><?php echo $this->session->flashdata('success'); ?></p>
@@ -40,7 +41,7 @@
 
 
 
- <?php echo form_open('user/Change_password');?>
+ <?php echo form_open('staff/Change_password');?>
 
      <div class="form-group">     
     <div class="form-row">
@@ -90,7 +91,7 @@
         <!-- /.container-fluid -->
 
         <!-- Sticky Footer -->
-     <?php include APPPATH.'views/user/includes/footer.php';?>
+     <?php include APPPATH.'views/staff/includes/footer.php';?>
 
       </div>
       <!-- /.content-wrapper -->

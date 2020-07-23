@@ -22,7 +22,7 @@ $dbpass=$cpass->password;
 if($dbpass==$cpassword){
 if($this->Admin_Changepassword_Model->updatepassword($adminid,$newpassword))
 {
-$this->session->set_flashdata('success', 'Password chnaged successfully');
+$this->session->set_flashdata('success', 'Password change successfully');
 	redirect('admin/change_password');
 }
 
