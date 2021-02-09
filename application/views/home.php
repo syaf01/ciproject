@@ -1,111 +1,312 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en"><!-- Basic -->
 <head>
- <title>Home Page</title>
-<!-- Bootstrap core CSS-->
-<?php echo link_tag('assests/vendor/bootstrap/css/bootstrap.min.css'); ?>
-<!-- Custom fonts for this template-->
-<?php echo link_tag('assests/vendor/fontawesome-free/css/all.min.css'); ?>
-<!-- Page level plugin CSS-->
-<?php echo link_tag('assests/vendor/datatables/dataTables.bootstrap4.css'); ?>
-<!-- Custom styles for this template-->
-<?php echo link_tag('assests/css/sb-admin.css'); ?>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+   
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+ 
+     <!-- Site Metas -->
+    <title>We Are Donor</title>   
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  </head>
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="<?php echo base_url('assests/img/faviconcopy.ico');?>" type="image/x-icon">
+    <link rel="apple-touch-icon" href="<?php echo base_url('assests/img/apple-touch-icon.png');?>">
 
-  <body id="page-top">
-    <div id="wrapper">
-      <div id="content-wrapper">
+    <!-- Bootstrap CSS -->
+    <?php echo link_tag('assests/css/bootstrap.min.css'); ?>
+    <!-- Pogo Slider CSS -->
+    <?php echo link_tag('assests/css/pogo-slider.min.css'); ?>
+	  <!-- Site CSS -->
+    <?php echo link_tag('assests/css/style.css'); ?>
+    <!-- Responsive CSS -->
+    <?php echo link_tag('assests/css/responsive.css'); ?>
+    <!-- Custom CSS -->
+	<?php echo link_tag('assests/css/customm.css'); ?>
+	<?php echo link_tag('assests/css/custom13.css'); ?>
+	<?php echo link_tag('assests/css/custom14.css'); ?>
+	<?php echo link_tag('assests/css/custom19.css'); ?>
 
-        <div class="container-fluid">
+</head>
+<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
 
-          <!-- Page Content -->
-          <center><img src="<?php echo base_url('assests/img/logo2.png');?>" alt="" class="center"></center>
-          
-<div class="row">
-<div class="col-xl-3 col-sm-6 mb-3">
-  &nbsp;
-</div>
-
-  <div class="col-xl-3 col-sm-6 mb-3">
-              <div class="card text-white bg-danger o-hidden h-100">
-                <div class="card-body">
-                  <div class="card-body-icon">
-                    <i class="fas fa-fw fa-users"></i> 
-                  </div>
-                  <div class="mr-5">USER</div>
+	<!-- LOADER -->
+     <!-- <div id="preloader">
+		<div class="loader">
+			<img src="images/preloader.gif" alt="" />
+		</div>
+    </div>end loader -->
+    <!-- END LOADER -->
+	
+	<!-- Start header -->
+	<header class="top-header"> 
+		<nav class="navbar header-nav navbar-expand-lg"> 
+            <div class="container">
+            <a class="navbar-brand" href="<?php echo site_url('home'); ?>">
+              <img src="<?php echo base_url('assests/img/logo2.png');?>" height="85">
+            </a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
+					<span></span>
+					<span></span>
+					<span></span> 
+				</button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+                    <ul class="navbar-nav">
+                        <li><a class="nav-link active" href="#home">Home</a></li>
+						<li><a class="nav-link" href="#about">About Us</a></li>
+						<li><a class="nav-link" href="#learn">Learn</a></li>
+						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="<?php echo site_url('user/Login'); ?>">User</a>
+                                <a class="dropdown-item" href="<?php echo site_url('admin/login'); ?>">Admin</a>
+                    </ul>
                 </div>
-               <a class="card-footer text-white clearfix small z-1" href="<?php echo site_url('user/login'); ?>">
-                  <span class="float-left">Click Here</span>
-                  <span class="float-right">
-                    <i class="fas fa-angle-right"></i>
-                  </span>
-                </a>
-              </div>
-            </div> 
-
-
-
-       <div class="col-xl-3 col-sm-6 mb-3">
-              <div class="card text-white bg-danger o-hidden h-100">
-                <div class="card-body">
-                  <div class="card-body-icon">
-                    <i class="fas fa-fw fa-list"></i>
-                  </div>
-                  <div class="mr-5">ADMIN</div>
-                </div>
-               <a class="card-footer text-white clearfix small z-1" href="<?php echo site_url('admin/login'); ?>">
-                  <span class="float-left">Click Here</span>
-                  <span class="float-right">
-                    <i class="fas fa-angle-right"></i>
-                  </span>
-                </a>
-              </div>
             </div>
-</div>
-<div class="row">
-<div class="col-xl-3 col-sm-6 mb-3">
-  &nbsp;
-</div>
-          <div class="col-xl-3 col-sm-6 mb-3">
-              <div class="card text-white bg-danger o-hidden h-100">
-                <div class="card-body">
-                  <div class="card-body-icon">
-                    <i class="fa fa-laptop"></i> 
-                  </div>
-                  <div class="mr-5">STAFF</div>
-                </div>
-               <a class="card-footer text-white clearfix small z-1" href="<?php echo site_url('staff/login'); ?>">
-                  <span class="float-left">Click Here</span>
-                  <span class="float-right">
-                    <i class="fas fa-angle-right"></i>
-                  </span>
-                </a>
-              </div>
-            </div> 
-</div>
+        </nav>
+	</header>
+	<!-- End header -->
+	
+	<!-- Start Banner -->
+	<div class="ulockd-home-slider"> 
+		<div class="container-fluid">
+			<div class="row">
+				<div class="pogoSlider" id="js-main-slider">
+					<div class="pogoSlider-slide" data-transition="fade" data-duration="1500" style="background-image:url(assests/img/3.png);">
+						<div class="lbox-caption pogoSlider-slide-element">
+							<div class="lbox-details">
+								<h1>Be a hero and let's donate blood</h1>
+								<h3><p>We donate what in-need. Let's schedule an appointment now!</p></h3>
+								<a href="<?php echo site_url('user/login'); ?>" class="btn">Donate</a>
+							</div>
+						</div>
+					</div>
+					<div class="pogoSlider-slide" data-transition="fade" data-duration="1500" style="background-image:url(assests/img/6.jpg);">
+						<div class="lbox-caption pogoSlider-slide-element">
+							<div class="lbox-details">
+								<h1>See if you are able to give blood</h1>
+								<h3><p>Let's find out if you are able to donate or not by answer some question and get InstantPass</p></h3>
+								<a href="<?php echo site_url('user/login'); ?>" class="btn">Eligibility</a>
+							</div>
+						</div>
+					</div>
+					<div class="pogoSlider-slide" data-transition="fade" data-duration="1500" style="background-image:url(assests/img/7.jpg);">
+						<div class="lbox-caption pogoSlider-slide-element">
+							<div class="lbox-details">
+								<h1>Coronavirus (Covid-19) Information</h1>
+								<h3><p>Learn more about Covid-19</p></h3>
+								<a href="<?php echo site_url('user/login'); ?>" class="btn">Learn More</a>
+							</div>
+						</div>
+						
+					</div>
+				</div><!-- .pogoSlider -->
+			</div>
+		</div>
+	</div>
+	<!-- End Banner -->
+	
+	<!-- Start About us --> 
+	<div id="about" class="about-box">
+		<div class="about-a1">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="title-box">
+							<h2>About Us</h2>
+							<h3><p>Check out more about We Are Donor's feature and advantages of using it.</p></h3>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12">
+						<div class="row align-items-center about-main-info">
+							<div class="col-lg-6 col-md-6 col-sm-12">
+								<h2> Welcome to We Are Donor </h2>
+								<h4><p>This platform called We Are Donor are gathering all the volunteer donors in donating blood despite different type of blood type.</p></h4>
+								<h4><p>On top of that, this platform also gives a lot of advantages and simplicity to the users who also donors</p></h4>
+								<a href="<?php echo site_url('user/login'); ?>" class="new-btn-d br-2">Read More</a>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-12">
+								<div class="about-m">
+									<ul id="banner">
+										<li>
+											<img src="<?php echo base_url('assests/img/4.jpg');?>" alt="">
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End About us -->
+	
+	<!-- Start Blog -->
+	<div id="blog" class="blog-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="title-box">
+						<h2>Learn</h2>
+						<h3><p>It only takes an hour to give blood, but it could change someone's life</p></h3>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 col-md-6 col-sm-12"> 
+					<div class="blog-inner">
+						<div class="blog-img">
+							<img class="img-fluid" src="<?php echo base_url('assests/img/18.jpg');?>" alt="" />
+						</div>
+						
+						<h2>TYPES OF DONATION</h2>
+						<p>There are about five litres of bloos in the human body and it is made up of several useful components</p>
+						<br>
+						<a class="new-btn-d br-2" href="<?php echo site_url('user/login'); ?>">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-12">
+					<div class="blog-inner"> 
+						<div class="blog-img">
+							<img class="img-fluid" src="<?php echo base_url('assests/img/14.jpg');?>" alt="" />
+						</div>
+						<h2>ADVANTAGES OF DONATING</h2>
+						<p>Learn more about advantages of donating blood such as free for certain treatment in any government hospitals</p>
+						<a class="new-btn-d br-2" href="<?php echo site_url('user/login'); ?>">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-12">
+					<div class="blog-inner">
+						<div class="blog-img">
+							<img class="img-fluid" src="<?php echo base_url('assests/img/16.jpg');?>" alt="" />
+						</div>
+						<h2>HOW DONATION WORKS</h2> 
+						<p>For new donor to know how donation works. Is it troublesome or easy?</p>
+						<br>
+						<a class="new-btn-d br-2" href="<?php echo site_url('user/login'); ?>">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Blog -->
+	
+	<!-- Start Contact -->
+	<div id="notify" class="contact-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="title-box">
+						<h2>Notify</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				
+				<div class="col-lg-12 col-xs-12">
+				  <div class="contact-block">
+					<form id="contactForm">
+					  <div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required data-error="Please enter your name">
+								<div class="help-block with-errors"></div>
+							</div>                                 
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<input type="text" placeholder="Your Email" id="email" class="form-control" name="name" required data-error="Please enter your email">
+								<div class="help-block with-errors"></div>
+							</div> 
+						</div>
+						<div class="col-md-12">
+							<div class="form-group">
+								<input type="text" placeholder="Your number" id="number" class="form-control" name="number" required data-error="Please enter your number">
+								<div class="help-block with-errors"></div>
+							</div> 
+						</div>
+						<div class="col-md-12">
+							<div class="form-group"> 
+								<textarea class="form-control" id="message" placeholder="Your Message" rows="8" data-error="Write your message" required></textarea>
+								<div class="help-block with-errors"></div>
+							</div>
+							<div class="submit-button text-center">
+								<button class="btn btn-common" id="submit" type="submit">Send Message</button>
+								<div id="msgSubmit" class="h3 text-center hidden"></div> 
+								<div class="clearfix"></div> 
+							</div>
+						</div>
+					  </div>            
+					</form>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Contact -->
+	
+	<!-- Start Subscribe -->
+	<div class="subscribe-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="subscribe-inner text-center clearfix">
+						<h2>Subscribe</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						<form action="#" method="post">
+							<div class="form-group">
+								<input class="form-control-1" id="email-1" name="email" placeholder="Email Address" required="" type="text">
+							</div>
+							<div class="form-group">
+								<button type="submit" class="new-btn-d br-2">
+									Subscribe
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Subscribe -->
+	
+	<!-- Start Footer -->
+	<footer class="footer-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<p class="footer-company-name">All Rights Reserved.</a></p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- End Footer -->
+	
+	<a href="#" id="scroll-to-top" class="new-btn-d br-2"><i class="fa fa-angle-up"></i></a>
 
-        </div>
-
-      </div>
-    </div>
-
-    <script src="<?php echo base_url('assests/vendor/jquery/jquery.min.js'); ?>"></script>
-    <script src="<?php echo base_url('assests/vendor/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
-    <!-- Core plugin JavaScript-->
-    <script src="<?php echo base_url('assests/vendor/jquery-easing/jquery.easing.min.js'); ?>"></script>
-
-    <!-- Page level plugin JavaScript-->
-    <script src="<?php echo base_url('assests/vendor/chart.js/Chart.min.js'); ?>"></script>
-    <script src="<?php echo base_url('assests/vendor/datatables/jquery.dataTables.js'); ?>"></script>
-    <script src="<?php echo base_url('assests/vendor/datatables/dataTables.bootstrap4.js'); ?>"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="<?php echo base_url('assests/js/sb-admin.min.js'); ?>"></script>
-    <script src="<?php echo base_url('assests/js/demo/datatables-demo.js'); ?>"></script>
-    <script src="<?php echo base_url('assests/js/demo/chart-area-demo.js'); ?>"></script>
-
-  </body>
-
+	<!-- ALL JS FILES -->
+	<script src="<?php echo base_url('assests/js/jquery.min.js'); ?>"></script>
+	<script src="<?php echo base_url('assests/js/popper.min.js'); ?>"></script>
+	<script src="<?php echo base_url('assests/js/bootstrap.min.js'); ?>"></script>
+    <!-- ALL PLUGINS -->
+	<script src="<?php echo base_url('assests/js/jquery.magnific-popup.min.js'); ?>"></script>
+  <script src="<?php echo base_url('assests/js/jquery.pogo-slider.min.js'); ?>"></script>
+	<script src="<?php echo base_url('assests/js/slider-index.js'); ?>"></script>
+	<script src="<?php echo base_url('assests/js/smoothscroll.js'); ?>"></script>
+	<script src="<?php echo base_url('assests/js/TweenMax.min.js'); ?>"></script>
+	<script src="<?php echo base_url('assests/js/main.js'); ?>"></script>
+	<script src="<?php echo base_url('assests/js/owl.carousel.min.js'); ?>"></script>
+	<script src="<?php echo base_url('assests/js/form-validator.min.js'); ?>"></script>
+  <script src="<?php echo base_url('assests/js/contact-form-script.js'); ?>"></script>
+	<script src="<?php echo base_url('assests/js/isotope.min.js'); ?>"></script>
+	<script src="<?php echo base_url('assests/js/images-loded.min.js'); ?>"></script>
+  <script src="<?php echo base_url('assests/js/customm.js'); ?>"></script>
+</body>
 </html>

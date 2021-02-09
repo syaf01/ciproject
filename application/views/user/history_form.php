@@ -1,32 +1,44 @@
 <!doctype html>
 <html>
     <head>
-        <title>Donation History</title>
+        <title>History</title>
         <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css') ?>"/>
         <style>
             body{
                 padding: 15px;
             }
         </style>
-    </head> 
+    </head>
     <body>
-        <h2 style="margin-top:0px">Insert Donation History</h2>
+        <h2 style="margin-top:0px">History <?php echo $button ?></h2> 
         <form action="<?php echo $action; ?>" method="post">
 	    <div class="form-group">
-            <label for="date">Date <?php echo form_error('Date') ?></label>
-            <input type="text" class="form-control" name="Date" id="Date" placeholder="Date" value="<?php echo $Date; ?>" />
+            <label for="date">Date <?php echo form_error('date') ?></label>
+            <input type="text" class="form-control" name="date" id="date" placeholder="Date" value="<?php echo $date; ?>" />
         </div>
 	    <div class="form-group">
-            <label for="time">Time <?php echo form_error('Time') ?></label>
-            <input type="text" class="form-control" name="Time" id="Time" placeholder="Time" value="<?php echo $Time; ?>" />
+            <label for="time">Time <?php echo form_error('time') ?></label>
+            <input type="text" class="form-control" name="time" id="time" placeholder="Time" value="<?php echo $time; ?>" />
         </div>
 	    <div class="form-group">
-            <label for="varchar">Branch <?php echo form_error('Branch') ?></label>
-            <input type="text" class="form-control" name="Branch" id="Branch" placeholder="Branch" value="<?php echo $Branch; ?>" />
+            <label for="int">HId <?php echo form_error('hId') ?></label>
+            <input type="text" class="form-control" name="hId" id="hId" placeholder="HId" value="<?php echo $hId; ?>" />
         </div>
-	    <input type="hidden" name="tblusers_id" value="<?php echo $tblusers_id; ?>" /> 
+	    <div class="form-group">
+            <label for="int">DId <?php echo form_error('dId') ?></label>
+            <input type="text" class="form-control" name="dId" id="dId" placeholder="DId" value="<?php echo $dId; ?>" />
+        </div>
+	    <div class="form-group">
+            <label for="int">DonateId <?php echo form_error('donateId') ?></label>
+            <input type="text" class="form-control" name="donateId" id="donateId" placeholder="DonateId" value="<?php echo $donateId; ?>" />
+        </div>
+	    <div class="form-group">
+            <label for="int">Tblusers Id <?php echo form_error('tblusers_id') ?></label>
+            <input type="text" class="form-control" name="tblusers_id" id="tblusers_id" placeholder="Tblusers Id" value="<?php echo $tblusers_id; ?>" />
+        </div>
+	    <input type="hidden" name="historyId" value="<?php echo $historyId; ?>" /> 
 	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
-	    <a href="<?php echo site_url('user/history') ?>" class="btn btn-default">Cancel</a>
+	    <a href="<?php echo site_url('history') ?>" class="btn btn-default">Cancel</a>
 	</form>
     </body>
 </html>

@@ -1,0 +1,19 @@
+.card-body{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 20px;
+    margin-left: 95%;      
+    margin-right: 95%;
+}
+
+.button5 .btnOne{
+    text-align: center;  
+    display: inline-block; 
+    color: #333333;
+    border-radius: 12px;
+    width: 250px;
+    height: 200px;
+    box-sizing: border-box;
+    border: 2px solid #ff0000;
+    background: #ffffff
+}

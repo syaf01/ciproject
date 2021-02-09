@@ -16,6 +16,6 @@ $data=array('userPassword' =>$newpassword );
 return $this->db->where(['id'=>$userid])
                 ->update('tblusers',$data);
 
-	}
+	} 
 
 }

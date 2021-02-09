@@ -1,0 +1,12 @@
+.button4 .btnOne{
+    font-size: 20px;
+    text-align: center;
+    display: inline-block;
+    color: #333333;
+    border-radius: 12px;
+    width: 200px;
+    height: 300px;
+    box-sizing: border-box;
+    border: 2px solid #ff0000;
+    background: #ffffff
+}

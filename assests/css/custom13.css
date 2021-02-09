@@ -1,0 +1,15 @@
+.button4 .btnOne{
+    text-align: center; 
+    display: inline-block;
+    color: #333333;
+    border-radius: 12px;
+    width: 300px;
+    height: 250px;
+    box-sizing: border-box;
+    border: 2px solid #ff0000;
+    background: #ffffff 
+}
+
+.li .a{
+    color: #ff0000;
+}

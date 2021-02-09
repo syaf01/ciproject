@@ -5,7 +5,7 @@
  *
  * Displays a Google Map
  *
- * @package		CodeIgniter
+ * @package		CodeIgniter 
  * @subpackage	Libraries
  * @category	Libraries
  * @author		BIOSTALL (Steve Marks)

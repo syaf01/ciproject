@@ -1,60 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-
-    <head>
-        <!-- Bootstrap core CSS-->
-        <?php echo link_tag('assests/vendor/bootstrap/css/bootstrap.min.css'); ?>
-        <!-- Custom fonts for this template-->
-        <?php echo link_tag('assests/vendor/fontawesome-free/css/all.min.css'); ?>
-        <!-- Page level plugin CSS-->
-        <?php echo link_tag('assests/vendor/datatables/dataTables.bootstrap4.css'); ?>
-        <!-- Custom styles for this template-->
-        <?php echo link_tag('assests/css/sb-admin.css'); ?>
-    </head>
-
-<body id="page-top">
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f50a0a;">
-    <a class="navbar-brand" href="<?php echo site_url('user/Dashboard'); ?>">
-        <img src="<?php echo base_url('assests/img/logo2.png');?>" height="30">
-    </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Home
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="<?php echo site_url('user/BloodReq'); ?>">Blood Request</a>
-          <a class="dropdown-item" href="<?php echo site_url('user/History'); ?>">Donation History</a>
-          <a class="dropdown-item" href="<?php echo site_url('user/Campaign'); ?>">Blood Campaign</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          My Account
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="<?php echo site_url('user/User_profile'); ?>">Update Profile</a>
-          <a class="dropdown-item" href="<?php echo site_url('user/Change_password'); ?>">Change Password</a>
-          <a class="dropdown-item" href="<?php echo site_url('user/Login/logout'); ?>">Log Out</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('user/Location'); ?>">Contact Us</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('user/About'); ?>">About Us</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0"> 
-    </form>
-  </div>
-</nav>
- 
-
-</body>
-</html>
+<!-- Start header -->
+<header class="top-header"> 
+		<nav class="navbar header-nav navbar-expand-lg">
+            <div class="container">
+            <a class="navbar-brand" href="<?php echo site_url('user/dashboard'); ?>">
+              <img src="<?php echo base_url('assests/img/logo2.png');?>" height="85">
+            </a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-wd"> 
+                    <ul class="navbar-nav">
+                        <li><a class="nav-link" href="<?php echo site_url('user/dashboard'); ?>">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Donate
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Appointment
+                                </a> 
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="<?php echo site_url('user/Appointment/create'); ?>">Schedule an Appointment</a>
+                                    <a class="dropdown-item" href="<?php echo site_url('user/appointment'); ?>">Manage Existing Appointment</a>
+                                </div>
+                                <!--<a class="dropdown-item" href="#">InstantPass</a>-->
+                                <a class="dropdown-item" href="<?php echo site_url('user/blooddrive'); ?>">Blood Drive</a> 
+                            </div>
+                        </li>
+						<li><a class="nav-link" href="<?php echo site_url('user/About'); ?>">About Us</a></li>
+						<li><a class="nav-link" href="<?php echo site_url('user/Learn'); ?>">Learn</a></li>
+                        <li><a class="nav-link" href="<?php echo site_url('user/Location'); ?>">Locate</a></li>
+                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Covid-19</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="<?php echo site_url('user/Covidcentre'); ?>">Testing Centre</a>
+                                <a class="dropdown-item" href="<?php echo site_url('user/SafetyProtocol'); ?>">Safety Protocols</a>
+							</div>
+						</li>
+                        <!--<li><a class="nav-link" href="<?php echo site_url('user/Eligible'); ?>">Eligibility</a></li>-->
+                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Account</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="<?php echo site_url('user/user_profile'); ?>">Settings</a>
+                                <a class="dropdown-item" href="<?php echo site_url('user/change_password'); ?>">Change Password</a>
+                                <a class="dropdown-item" href="<?php echo site_url('user/History'); ?>">History</a>
+                                <a class="dropdown-item" href="<?php echo site_url('user/Login/logout'); ?>">Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+	</header>
+	<!-- End header -->

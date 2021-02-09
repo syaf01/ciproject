@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Staff Login</title>
+    <title>Staff Login</title> 
 
 <?php echo link_tag('assests/vendor/bootstrap/css/bootstrap.min.css'); ?>
 <?php echo link_tag('assests/vendor/fontawesome-free/css/all.min.css'); ?>
@@ -9,7 +9,7 @@
 
   </head>
 
-  <body class="bg-danger">
+  <body class="bg">
     <br>
     <br>
     <br>

@@ -2,6 +2,9 @@
 <html lang="en">
   <head>
     <title>Admin Login</title>
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="<?php echo base_url('assests/img/faviconcopy.ico');?>" type="image/x-icon">
+    <link rel="apple-touch-icon" href="<?php echo base_url('assests/img/apple-touch-icon.png');?>">
 
 <?php echo link_tag('assests/vendor/bootstrap/css/bootstrap.min.css'); ?>
 <?php echo link_tag('assests/vendor/fontawesome-free/css/all.min.css'); ?>
@@ -9,12 +12,12 @@
 
   </head>
 
-  <body class="bg-danger">
+  <body class="bg">
     <br>
     <br>
     <br>
     <br>
-    <br>
+    <br> 
 
     <div class="container">
       <div class="card card-login mx-auto mt-5">

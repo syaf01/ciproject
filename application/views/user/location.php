@@ -1,137 +1,87 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-<title>Location</title>
-<!-- Bootstrap core CSS-->
-<?php echo link_tag('assests/vendor/bootstrap/css/bootstrap.min.css'); ?>
-<!-- Custom fonts for this template-->
-<?php echo link_tag('assests/vendor/fontawesome-free/css/all.min.css'); ?>
-<!-- Page level plugin CSS-->
-<?php echo link_tag('assests/vendor/datatables/dataTables.bootstrap4.css'); ?>
-<!-- Custom styles for this template-->
-<?php echo link_tag('assests/css/sb-admin.css'); ?>
-<?php echo link_tag('assests/css/custom9.css'); ?>
-</head>
-  <body>
+
+  <head>
+    <title>User : Find the nearest hospital & blood drive</title> 
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="<?php echo base_url('assests/img/faviconcopy.ico');?>" type="image/x-icon">
+    <link rel="apple-touch-icon" href="<?php echo base_url('assests/img/apple-touch-icon.png');?>">
+
+    <!-- Bootstrap CSS -->
+    <!-- Bootstrap core CSS-->
+    <?php echo link_tag('assests/vendor/bootstrap/css/bootstrap.min.css'); ?>
+    <!-- Custom fonts for this template-->
+    <?php echo link_tag('assests/vendor/fontawesome-free/css/all.min.css'); ?>
+    <!-- Page level plugin CSS-->
+    <?php echo link_tag('assests/vendor/datatables/dataTables.bootstrap4.css'); ?>
+    <!-- Pogo Slider CSS -->
+    <?php echo link_tag('assests/css/pogo-slider.min.css'); ?>
+	  <!-- Site CSS -->
+    <?php echo link_tag('assests/css/style.css'); ?>
+    <!-- Responsive CSS -->
+    <?php echo link_tag('assests/css/responsive.css'); ?> 
+    <!-- Custom CSS -->
+	  <?php echo link_tag('assests/css/customm.css'); ?>
+    <?php echo link_tag('assests/css/custom13.css'); ?>
+    <?php echo link_tag('assests/css/custom17.css'); ?>
+    <!-- Custom styles for this template-->
+    <?php echo link_tag('assests/css/sb-admin.css'); ?>
+    
+    <link rel="stylesheet" href="<?php echo base_url('leaflet/leaflet.css');?>" />
+    <script src="<?php echo base_url('leaflet/leaflet.js'); ?>"></script>
+
+    <link rel="stylesheet" href="<?php echo base_url('leaflet-search/src/leaflet-search.css');?>" />
+    <script src="<?php echo base_url('leaflet-search/src/leaflet-search.js'); ?>"></script>
+
+    <link rel="stylesheet" href="<?php echo base_url('leaflet-locatecontrol/dist/L.Control.Locate.min.css');?>"/>
+    <script src="<?php echo base_url('leaflet-locatecontrol/dist/L.Control.Locate.min.js'); ?>"></script>
+   
+  </head>
   <body id="page-top">
+  
 
-<?php include APPPATH.'views/user/includes/header.php';?>
+    <?php include APPPATH.'views/user/includes/header.php';?>
 
- <div id="wrapper">
+    <div id="wrapper">
 
-   <div id="content-wrapper">
+      <div id="content-wrapper"> 
 
-     <div class="container">
-     <!-- /.container-fluid -->
-
-     <center><h2 style="margin-top:0px">Locate Us</h2></center>
+        <div class="container">
+        <center><strong><h1 style="margin-top:0px">Find the nearest blood centre</h1></strong></center> 
         <br>
-
-     <!-- Page Features --> 
- <div class="row text-center">
- <div class="col-12">
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th> <h5>HOSPITAL MELAKA</h5>
-            <br>
-            <div class="card h-100">
- <img class="card-img-top" src="<?php echo base_url('assests/img/HMT.jpg');?>" alt="">
- <div class="card-body">
-   <p class="card-text"></p>
- </div>
- <a class="btn btn-danger" href="<?php echo site_url('user/Location_map'); ?>">Location</a>
-            </th>
-
-            <th> <h5>HOSPITAL ALOR GAJAH</h5>
-            <br>
-            <div class="card h-100">
- <img class="card-img-top" src="<?php echo base_url('assests/img/HAG.jpg');?>" alt="">
- <div class="card-body">
-   <p class="card-text"></p>
- </div>
- <a class="btn btn-danger" href="<?php echo site_url('user/Location_map2'); ?>">Location</a>
-            </th>
-
-            <th> <h5>HOSPITAL JASIN</h5>
-            <br>
-            <div class="card h-100">
-            
- <img class="card-img-top" src="<?php echo base_url('assests/img/HJ.jpg');?>" alt="">
- <div class="card-body">
-   <p class="card-text"></p>
- </div>
- <a class="btn btn-danger" href="<?php echo site_url('user/Location_map3'); ?>">Location</a>
-            </th>
-          </tr>
-        </thead>
-      </table>
-  </div>
-</div>
-
-<br>
-<br>
-
-<center><h2 style="margin-top:0px">Contact Us</h2></center>
-        <br>
-
-     <!-- Page Features --> 
- <div class="row text-center">
- <div class="col-12">
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th> <h5>HOSPITAL MELAKA</h5>
-            <br>
-            <div class="card h-100">
- 
- <div class="card-body">
-   <p class="card-text"></p>
-   Address : <br> Jalan Mufti Haji Khalil, 75400 Melaka <br><br>
-   Contact Number : <br> 06-2892045 <br><br>
-   Hours : <br> Open 24 hours <br><br>
-   Email : <br> hmelaka@moh.gov.my
- </div>
- <a class="btn btn-danger" href="http://hmelaka.moh.gov.my/v2/">Website</a>
-            </th>
-
-            <th> <h5>HOSPITAL ALOR GAJAH</h5>
-            <br>
-            <div class="card h-100">
- <div class="card-body">
-   <p class="card-text"></p>
-   Address : <br> Jalan Paya Datuk, 78000 Alor Gajah, Melaka <br><br>
-   Contact Number : <br> 06-5562333/5355/5350 <br><br>
-   Hours : <br> 8:00a.m - 9:30a.m <br><br>
-   Email : <br> hosag@moh.gov.my
- </div>
- <a class="btn btn-danger" href="https://hag.moh.gov.my/2/">Website</a>
-            </th>
-
-            <th> <h5>HOSPITAL JASIN</h5>
-            <br>
-            <div class="card h-100">
- <div class="card-body">
-   <p class="card-text"></p>
-   Address : <br> Hospital Utama, 77000 Jasin, Melaka <br><br>
-   Contact Number : <br>  06-5294262 <br><br>
-   Hours : <br> Open 24 hours <br><br>
-   Email : <br> --
- </div>
- <a class="btn btn-danger" href="#">Website</a>
-            </th>
-          </tr>
-        </thead>
-      </table>
-  </div>
-</div>
-</div>
-</div>
-</div>
+        <center><div id='map' style='width: 1000px; height: 600px;'></div></center>
 
 
+        <script>  
 
-<!-- Bootstrap core JavaScript-->
+          var map = L.map('map').setView([2.303079, 102.302672], 11);
+
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          }).addTo(map); 
+
+          <?php foreach ($location_data as $location) { ?>
+            L.marker([<?php echo $location->latitude ?>, <?php echo $location->longitude ?>])
+            .bindPopup("<?php echo $location->address ?>
+            <br><?php echo $location->postalCode ?> <?php echo $location->city ?>")
+            .addTo(map);
+          <?php } ?>
+
+          L.control.locate({ position: 'topleft',
+            strings: { title: "Show me where I am, yo!" }
+          }).addTo(map);
+
+        </script>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Sticky Footer -->
+    <?php include APPPATH.'views/user/includes/footer.php';?>
+
+    <!-- Bootstrap core JavaScript-->
     <script src="<?php echo base_url('assests/vendor/jquery/jquery.min.js'); ?>"></script>
     <script src="<?php echo base_url('assests/vendor/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
     <!-- Core plugin JavaScript-->
@@ -139,7 +89,16 @@
     <!-- Custom scripts for all pages-->
     <script src="<?php echo base_url('assests/js/sb-admin.min.js '); ?>"></script>
     <script src="<?php echo base_url('assests/js/custom.js '); ?>"></script>
-    <script src="<?php echo base_url('assests/js/custom6.js '); ?>"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBLdf_bgz9Z-dG-AKlhVasmkVqWtsKcjI&callback=init"></script>
+    <script src="<?php echo base_url('assests/js/custom14.js '); ?>"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+    <link rel="stylesheet"
+          href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
+          type="text/css"/>
+    <!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+
+    
+  
   </body>
 </html>

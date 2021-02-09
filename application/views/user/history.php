@@ -1,34 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
+ 
 <head>
-<title>Donation History</title>
-<!-- Bootstrap core CSS-->
-<?php echo link_tag('assests/vendor/bootstrap/css/bootstrap.min.css'); ?>
-<!-- Custom fonts for this template-->
-<?php echo link_tag('assests/vendor/fontawesome-free/css/all.min.css'); ?>
-<!-- Page level plugin CSS-->
-<?php echo link_tag('assests/vendor/datatables/dataTables.bootstrap4.css'); ?>
-<!-- Custom styles for this template-->
-<?php echo link_tag('assests/css/sb-admin.css'); ?>
+    <title>User : View history of blood donation</title> 
 
-  </head>
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="<?php echo base_url('assests/img/faviconcopy.ico');?>" type="image/x-icon">
+    <link rel="apple-touch-icon" href="<?php echo base_url('assests/img/apple-touch-icon.png');?>">
 
-  <body id="page-top">
+    <!-- Bootstrap CSS -->
+    <!-- Bootstrap core CSS-->
+    <?php echo link_tag('assests/vendor/bootstrap/css/bootstrap.min.css'); ?>
+    <!-- Custom fonts for this template-->
+    <?php echo link_tag('assests/vendor/fontawesome-free/css/all.min.css'); ?>
+    <!-- Page level plugin CSS-->
+    <?php echo link_tag('assests/vendor/datatables/dataTables.bootstrap4.css'); ?>
+    <!-- Pogo Slider CSS -->
+    <?php echo link_tag('assests/css/pogo-slider.min.css'); ?>
+	  <!-- Site CSS -->
+    <?php echo link_tag('assests/css/style.css'); ?>
+    <!-- Responsive CSS -->
+    <?php echo link_tag('assests/css/responsive.css'); ?> 
+    <!-- Custom CSS -->
+	<?php echo link_tag('assests/css/customm.css'); ?>
+	<?php echo link_tag('assests/css/custom13.css'); ?>
+    <!-- Custom styles for this template-->
+    <?php echo link_tag('assests/css/sb-admin.css'); ?>
 
-   <?php include APPPATH.'views/user/includes/header.php';?>
+</head>
+
+    <body id="page-top">
+
+    <?php include APPPATH.'views/user/includes/header.php';?>
 
     <div id="wrapper">
-  <div id="content-wrapper">
+        <div id="content-wrapper"> 
 
-        <div class="container-fluid">
+        <div class="container-fluid"> 
 
         <!--Table-->
-    <div class="container">
-    <h2 style="margin-top:0px">History List</h2>
+        <div class="container">
+    <h2 style="margin-top:0px">History</h2>
         <div class="row" style="margin-bottom: 10px">
-            <div class="col-md-4">
-                <?php echo anchor(site_url('user/History/create'),'Create', 'class="btn btn-danger"'); ?>
+        <div class="col-md-4">
+                <?php echo anchor(site_url('user/history/create'),'Create', 'class="btn btn-danger"'); ?>
             </div>
             <div class="col-md-4 text-center">
                 <div style="margin-top: 8px" id="message">
@@ -54,29 +69,33 @@
                         </span>
                     </div> 
                 </form>
-            </div>
+            </div> 
         </div>
-        <table class="table table-bordered" style="margin-bottom: 10px">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <tr>
-                <th>No</th>
-		<th>Date</th>
-		<th>Time</th>
-		<th>Branch</th>
-		<th>Action</th>
+            <th>No</th>
+		    <th>Date</th>
+		    <th>Time</th>
+		    <th>Hospital</th> 
+		    <th>Blood Drive</th>
+		    <th>Donation Type</th> 
+		    <!--<th>Action</th>-->
             </tr><?php
             foreach ($history_data as $history)
             {
                 ?>
                 <tr>
 			<td width="80px"><?php echo ++$start ?></td>
-			<td><?php echo $history->Date ?></td>
-			<td><?php echo $history->Time ?></td>
-			<td><?php echo $history->Branch ?></td>
-			<td style="text-align:center" width="200px">
+			<td><?php echo $history->date ?></td>
+			<td><?php echo $history->time ?></td>
+			<td><?php echo $history->hname ?></td>
+			<td><?php echo $history->dname ?></td>
+			<td><?php echo $history->donateName ?></td>
+			<!--<td style="text-align:center" width="200px">
 				<?php 
 				echo anchor(site_url('user/History/read/'.$history->tblusers_id),'View'); 
 				?>
-			</td>
+			</td>-->
 		</tr>
                 <?php
             }

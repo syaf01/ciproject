@@ -1,7 +1,11 @@
-      <footer class="sticky-footer">
-          <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-            
-            </div>
-          </div>
-        </footer>
+	<!-- Start Footer -->
+	<footer class="footer-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<p class="footer-company-name">All Rights Reserved.</a></p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- End Footer -->

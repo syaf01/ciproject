@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>User Login</title>
+    <title>User : Login</title>
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="<?php echo base_url('assests/img/faviconcopy.ico');?>" type="image/x-icon">
+    <link rel="apple-touch-icon" href="<?php echo base_url('assests/img/apple-touch-icon.png');?>">
 
 <?php echo link_tag('assests/vendor/bootstrap/css/bootstrap.min.css'); ?>
 <?php echo link_tag('assests/vendor/fontawesome-free/css/all.min.css'); ?>
@@ -9,11 +13,11 @@
 
   </head>
 
-  <body class="bg-danger">
+  <body class="bg">
     <br>
     <br>
     <br>
-    <br>
+    <br> 
     <br>
     <div class="container">
       <div class="card card-login mx-auto mt-5">
@@ -40,7 +44,7 @@
               </div>
             </div>
    
- <?php echo form_submit(['name'=>'login','value'=>'LOGIN','class'=>'btn btn-danger btn-block']); ?>
+ <?php echo form_submit(['name'=>'login','value'=>'LOGIN','class'=>'btn btn-danger btn-block']); ?> 
 <?php echo form_close(); ?>
             
 <a class="d-block small mt-3" href="<?php echo site_url('user/Signup'); ?>">Register an Account</a>

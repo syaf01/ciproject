@@ -1,15 +1,15 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-Class Signup extends CI_Controller {
+defined('BASEPATH') OR exit('No direct script access allowed'); 
+Class Signup extends CI_Controller { 
 	
     public function index(){
 
         $this->form_validation->set_rules('firstname','First Name','required|alpha');
-        $this->form_validation->set_rules('lastname','Last  Name','required|alpha');
+        $this->form_validation->set_rules('lastname','Last Name','required|alpha');
         $this->form_validation->set_rules('age','Age','required|numeric|exact_length[2]');
         $this->form_validation->set_rules('icNo','I/C No','required|numeric|exact_length[12]');
         $this->form_validation->set_rules('gender','Gender','required|alpha');
-        $this->form_validation->set_rules('bloodType','blood Type','required|alpha');
+        $this->form_validation->set_rules('bloodType','blood Type','required|alpha'); 
         $this->form_validation->set_rules('address','Address');
         $this->form_validation->set_rules('emailid','Email id','required|valid_email|is_unique[tblusers.emailId]');
         $this->form_validation->set_rules('mobilenumber','Mobile Number','required|numeric|exact_length[10]');
@@ -18,7 +18,7 @@ Class Signup extends CI_Controller {
 
         if($this->form_validation->run()){
  
-            $fname=$this->input->post('firstname');
+            $fname=$this->input->post('firstname'); 
             $lname=$this->input->post('lastname');
             $age=$this->input->post('age');
             $icNo=$this->input->post('icNo');
@@ -37,4 +37,5 @@ Class Signup extends CI_Controller {
             $this->load->view('user/signup');
         }       	
     }
+    
 }

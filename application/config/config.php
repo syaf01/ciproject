@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/ciproject';
+$config['base_url'] = 'http://localhost/ciproject/';
 
 /*
 |--------------------------------------------------------------------------
@@ -324,7 +324,7 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = 'asdgdase2342b423';
+$config['encryption_key'] = 'xRUqKhsoZ5qV6y3kqARFJFdPqJvp7X2z';
 
 /*
 |--------------------------------------------------------------------------
